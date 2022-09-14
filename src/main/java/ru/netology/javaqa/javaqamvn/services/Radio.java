@@ -1,18 +1,8 @@
 package ru.netology.javaqa.javaqamvn.services;
 
 public class Radio {
-    public int currentStation;
-    public int currentVolume;
-    private int maxStation;
-    private int maxVolume = 100;
-
-    public Radio(int numberOfStations) {
-        numberOfStations = maxStation -1;
-    }
-
-    public Radio() {
-        maxStation = 9;
-    }
+    protected int currentStation;
+    protected int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
@@ -27,15 +17,15 @@ public class Radio {
     ;
 
     public void setToMaxStation() {
-        currentStation = maxStation;
+        currentStation = 9;
     }
 
     public void setToMaxVolume() {
-        currentVolume = maxVolume;
+        currentVolume = 10;
     }
 
     public int next() {
-        if (currentStation > 0 && currentStation < maxStation) {
+        if (currentStation > 0 && currentStation < 9) {
             currentStation = currentStation + 1;
         } else if (currentStation == 0) {
             currentStation = currentStation + 1;
@@ -46,9 +36,9 @@ public class Radio {
     }
 
     public int prev() {
-        if (currentStation > 0 && currentStation < maxStation) {
+        if (currentStation > 0 && currentStation < 9) {
             currentStation = currentStation - 1;
-        } else if (currentStation == maxStation) {
+        } else if (currentStation == 9) {
             currentStation = currentStation - 1;
         } else {
             setToMaxStation();
@@ -66,7 +56,7 @@ public class Radio {
     }
 
     public int increaseVolume() {
-        if (currentVolume > 0 && currentVolume < maxVolume) {
+        if (currentVolume > 0 && currentVolume < 10) {
             currentVolume = currentVolume + 1;
         } else if (currentVolume == 0) {
             currentVolume = currentVolume + 1;
@@ -77,9 +67,9 @@ public class Radio {
     }
 
     public int turnDownVolume() {
-        if (currentVolume > 0 && currentVolume < maxVolume) {
+        if (currentVolume > 0 && currentVolume < 10) {
             currentVolume = currentVolume - 1;
-        } else if (currentVolume == maxVolume) {
+        } else if (currentVolume == 10) {
             currentVolume = currentVolume - 1;
         } else {
             currentVolume = 0;

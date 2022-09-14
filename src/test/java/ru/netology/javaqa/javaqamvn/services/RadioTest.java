@@ -12,14 +12,6 @@ public class RadioTest {
         int actual = rad.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-    @Test
-    public void NumberOfStation() {
-        Radio rad = new Radio(27);
-        rad.setCurrentStation(20);
-        int expected = 20;
-        int actual = rad.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void shouldSetCurrentVolume() {
@@ -38,14 +30,16 @@ public class RadioTest {
         int actual = rad.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSetToMaxVolume() {
         Radio vol = new Radio();
         vol.setToMaxVolume();
-        int expected = 100;
+        int expected = 10;
         int actual = vol.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextStation() {
         Radio rad = new Radio();
@@ -63,6 +57,7 @@ public class RadioTest {
         int actual = rad.next();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextStationFromEight() {
         Radio rad = new Radio();
@@ -80,6 +75,7 @@ public class RadioTest {
         int actual = rad.prev();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToPrevStationFromZero() {
         Radio rad = new Radio();
@@ -88,6 +84,7 @@ public class RadioTest {
         int actual = rad.prev();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToPrevStationFromNine() {
         Radio rad = new Radio();
@@ -96,6 +93,7 @@ public class RadioTest {
         int actual = rad.prev();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextVolumeFromOne() {
         Radio vol = new Radio();
@@ -104,14 +102,16 @@ public class RadioTest {
         int actual = vol.increaseVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldSwitchToNextVolumeFromOneMaxVolume() {
+    public void shouldSwitchToNextVolumeFromTen() {
         Radio vol = new Radio();
-        vol.setCurrentVolume(100);
-        int expected = 100;
+        vol.setCurrentVolume(10);
+        int expected = 10;
         int actual = vol.increaseVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToNextVolumeFromZero() {
         Radio vol = new Radio();
@@ -120,27 +120,33 @@ public class RadioTest {
         int actual = vol.increaseVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToPrevVolumeFromOne() {
-        Radio vol = new Radio();;
+        Radio vol = new Radio();
+        ;
         vol.setCurrentVolume(1);
         int expected = 0;
         int actual = vol.turnDownVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSwitchToPrevVolumeFromZero() {
-        Radio vol = new Radio();;
+        Radio vol = new Radio();
+        ;
         vol.setCurrentVolume(0);
         int expected = 0;
         int actual = vol.turnDownVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void shouldSwitchToPrevVolumeFromMaxVolume() {
-        Radio vol = new Radio();;
-        vol.setCurrentVolume(100);
-        int expected = 99;
+    public void shouldSwitchToPrevVolumeFromTen() {
+        Radio vol = new Radio();
+        ;
+        vol.setCurrentVolume(10);
+        int expected = 9;
         int actual = vol.turnDownVolume();
         Assertions.assertEquals(expected, actual);
     }
