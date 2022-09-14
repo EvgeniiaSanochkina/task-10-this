@@ -1,7 +1,7 @@
 package ru.netology.javaqa.javaqamvn.services;
 public class Radio {
-    public int currentStation;
-    public int currentVolume;
+    protected int currentStation;
+    protected int currentVolume;
 
     public int getCurrentStation() {
         return currentStation;
