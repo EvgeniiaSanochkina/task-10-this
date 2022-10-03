@@ -18,13 +18,11 @@ public class Radio {
         return currentStation;
     }
 
-    ;
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-    ;
 
     public void setToMaxStation() {
         currentStation = maxStation;
